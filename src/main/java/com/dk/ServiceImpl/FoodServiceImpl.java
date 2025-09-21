@@ -7,11 +7,13 @@ import com.dk.model.Restaurant;
 import com.dk.request.CreateFoodRequest;
 import com.dk.service.FoodService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Service
 public class FoodServiceImpl implements FoodService {
 
     @Autowired

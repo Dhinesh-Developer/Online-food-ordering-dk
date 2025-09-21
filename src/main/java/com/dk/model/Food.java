@@ -24,7 +24,7 @@ public class Food {
 
     // many food have same category.
     @ManyToOne
-    private Category foorCategory;
+    private Category foodCategory;
 
     @Column(length = 1000)
     @ElementCollection
@@ -50,7 +50,7 @@ public class Food {
         this.name = name;
         this.description = description;
         this.price = price;
-        this.foorCategory = foorCategory;
+        this.foodCategory = foorCategory;
         this.images = images;
         this.available = available;
         this.restaurant = restaurant;
@@ -65,7 +65,7 @@ public class Food {
         this.name = name;
         this.description = description;
         this.price = price;
-        this.foorCategory = foorCategory;
+        this.foodCategory = foorCategory;
         this.images = images;
         this.available = available;
         this.restaurant = restaurant;
@@ -110,11 +110,11 @@ public class Food {
     }
 
     public Category getFoorCategory() {
-        return foorCategory;
+        return foodCategory;
     }
 
     public void setFoorCategory(Category foorCategory) {
-        this.foorCategory = foorCategory;
+        this.foodCategory = foorCategory;
     }
 
     public List<String> getImages() {
@@ -180,7 +180,7 @@ public class Food {
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", price=" + price +
-                ", foorCategory=" + foorCategory +
+                ", foorCategory=" + foodCategory +
                 ", images=" + images +
                 ", available=" + available +
                 ", restaurant=" + restaurant +
