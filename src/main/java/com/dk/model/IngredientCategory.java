@@ -10,9 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class IngredientCategory {
 
     @Id
@@ -28,4 +25,61 @@ public class IngredientCategory {
     @OneToMany(mappedBy = "category",cascade = CascadeType.ALL)
     private List<IngredientsItem> ingredientsItemList = new ArrayList<>();
 
+    public IngredientCategory() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Restaurant getRestaurant() {
+        return restaurant;
+    }
+
+    public void setRestaurant(Restaurant restaurant) {
+        this.restaurant = restaurant;
+    }
+
+    public List<IngredientsItem> getIngredientsItemList() {
+        return ingredientsItemList;
+    }
+
+    public void setIngredientsItemList(List<IngredientsItem> ingredientsItemList) {
+        this.ingredientsItemList = ingredientsItemList;
+    }
+
+    public IngredientCategory(int id, String name, Restaurant restaurant, List<IngredientsItem> ingredientsItemList) {
+        this.id = id;
+        this.name = name;
+        this.restaurant = restaurant;
+        this.ingredientsItemList = ingredientsItemList;
+    }
+
+    public IngredientCategory(String name, Restaurant restaurant, List<IngredientsItem> ingredientsItemList) {
+        this.name = name;
+        this.restaurant = restaurant;
+        this.ingredientsItemList = ingredientsItemList;
+    }
+
+    @Override
+    public String toString() {
+        return "IngredientCategory{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", restaurant=" + restaurant +
+                ", ingredientsItemList=" + ingredientsItemList +
+                '}';
+    }
 }

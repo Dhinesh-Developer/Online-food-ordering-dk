@@ -9,9 +9,7 @@ import lombok.NoArgsConstructor;
 
 
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
+
 public class Category {
 
     @Id
@@ -25,6 +23,45 @@ public class Category {
     private Restaurant restaurant;
 
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Restaurant getRestaurant() {
+        return restaurant;
+    }
+
+    public void setRestaurant(Restaurant restaurant) {
+        this.restaurant = restaurant;
+    }
+
+    public Category(String name, Restaurant restaurant) {
+        this.name = name;
+        this.restaurant = restaurant;
+    }
+
+    public Category() {
+    }
 
 
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", restaurant=" + restaurant +
+                '}';
+    }
 }
