@@ -11,9 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class Restaurant {
 
     @Id
@@ -52,7 +50,160 @@ public class Restaurant {
     @OneToMany(mappedBy = "restaurant",cascade = CascadeType.ALL)
     private List<Food> foods = new ArrayList<>();
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
+    public User getOwner() {
+        return owner;
+    }
 
+    public void setOwner(User owner) {
+        this.owner = owner;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getCuisineType() {
+        return cuisineType;
+    }
+
+    public void setCuisineType(String cuisineType) {
+        this.cuisineType = cuisineType;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public ContactInformation getContactInformation() {
+        return contactInformation;
+    }
+
+    public void setContactInformation(ContactInformation contactInformation) {
+        this.contactInformation = contactInformation;
+    }
+
+    public String getOpeningHours() {
+        return openingHours;
+    }
+
+    public void setOpeningHours(String openingHours) {
+        this.openingHours = openingHours;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
+
+    public List<String> getImages() {
+        return images;
+    }
+
+    public void setImages(List<String> images) {
+        this.images = images;
+    }
+
+    public LocalDateTime getRegisterationDate() {
+        return registerationDate;
+    }
+
+    public void setRegisterationDate(LocalDateTime registerationDate) {
+        this.registerationDate = registerationDate;
+    }
+
+    public boolean isOpen() {
+        return open;
+    }
+
+    public void setOpen(boolean open) {
+        this.open = open;
+    }
+
+    public List<Food> getFoods() {
+        return foods;
+    }
+
+    public void setFoods(List<Food> foods) {
+        this.foods = foods;
+    }
+
+    @Override
+    public String toString() {
+        return "Restaurant{" +
+                "id=" + id +
+                ", owner=" + owner +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", cuisineType='" + cuisineType + '\'' +
+                ", address=" + address +
+                ", contactInformation=" + contactInformation +
+                ", openingHours='" + openingHours + '\'' +
+                ", orders=" + orders +
+                ", images=" + images +
+                ", registerationDate=" + registerationDate +
+                ", open=" + open +
+                ", foods=" + foods +
+                '}';
+    }
+
+    public Restaurant() {
+    }
+
+    public Restaurant(User owner, String name, String description, String cuisineType, Address address, ContactInformation contactInformation, String openingHours, List<Order> orders, List<String> images, LocalDateTime registerationDate, boolean open, List<Food> foods) {
+        this.owner = owner;
+        this.name = name;
+        this.description = description;
+        this.cuisineType = cuisineType;
+        this.address = address;
+        this.contactInformation = contactInformation;
+        this.openingHours = openingHours;
+        this.orders = orders;
+        this.images = images;
+        this.registerationDate = registerationDate;
+        this.open = open;
+        this.foods = foods;
+    }
+
+    public Restaurant(Long id, User owner, String name, String description, String cuisineType, Address address, ContactInformation contactInformation, String openingHours, List<Order> orders, List<String> images, LocalDateTime registerationDate, boolean open, List<Food> foods) {
+        this.id = id;
+        this.owner = owner;
+        this.name = name;
+        this.description = description;
+        this.cuisineType = cuisineType;
+        this.address = address;
+        this.contactInformation = contactInformation;
+        this.openingHours = openingHours;
+        this.orders = orders;
+        this.images = images;
+        this.registerationDate = registerationDate;
+        this.open = open;
+        this.foods = foods;
+    }
 }

@@ -1,5 +1,6 @@
 package com.dk.request;
 
+import com.dk.model.Address;
 import com.dk.model.ContactInformation;
 
 import java.time.LocalDateTime;
@@ -11,10 +12,11 @@ public class CreateRestaurantRequest {
     private String name;
     private String description;
     private String cuisineType;
-    private String address;
+    private Address address;   // ✅ only keep Address object
     private ContactInformation contactInformation;
     private String openingHours;
     private List<String> images;
+    private boolean open;
 
     public Long getId() {
         return id;
@@ -48,11 +50,11 @@ public class CreateRestaurantRequest {
         this.cuisineType = cuisineType;
     }
 
-    public String getAddress() {
+    public Address getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 
@@ -78,5 +80,13 @@ public class CreateRestaurantRequest {
 
     public void setImages(List<String> images) {
         this.images = images;
+    }
+
+    public boolean isOpen() {
+        return open;
+    }
+
+    public void setOpen(boolean open) {
+        this.open = open;
     }
 }
