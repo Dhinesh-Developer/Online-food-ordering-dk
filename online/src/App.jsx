@@ -6,6 +6,7 @@ import { CssBaseline } from '@mui/material';
 import Home from './components/Home/Home.jsx';
 import RestaurantDetails from './components/Restaurant/RestaurantDetails.jsx';
 import Card from './components/Card/Card.jsx';
+import Profile from './components/Profile/Profile.jsx';
 function App() {
   return (
     <ThemeProvider theme={darkTheme}>
@@ -13,7 +14,8 @@ function App() {
           <Navbar/>
           {/* <Home/> */}
           {/* <RestaurantDetails/> */}
-          <Card/>
+          {/* <Card/> */}
+          <Profile/>
 
     </ThemeProvider>
 
