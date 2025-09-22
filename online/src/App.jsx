@@ -5,13 +5,15 @@ import { darkTheme } from './Theme/DarkTheme.jsx';
 import { CssBaseline } from '@mui/material';
 import Home from './components/Home/Home.jsx';
 import RestaurantDetails from './components/Restaurant/RestaurantDetails.jsx';
+import Card from './components/Card/Card.jsx';
 function App() {
   return (
     <ThemeProvider theme={darkTheme}>
         <CssBaseline/>
           <Navbar/>
           {/* <Home/> */}
-          <RestaurantDetails/>
+          {/* <RestaurantDetails/> */}
+          <Card/>
 
     </ThemeProvider>
 
