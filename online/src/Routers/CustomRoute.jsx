@@ -5,6 +5,7 @@ import Home from '../components/Home/Home'
 import RestaurantCard from '../components/Restaurant/RestaurantDetails'
 import Card from '../components/Card/Card'
 import Profile from '../components/Profile/Profile'
+import Auth from '../components/Auth/Auth'
 
 
 const CustomRoute = () => {
@@ -19,6 +20,7 @@ const CustomRoute = () => {
             <Route path='/my-profile/*' element={<Profile/>}/>
 
         </Routes>
+        <Auth/>
     </div>
   )
 }

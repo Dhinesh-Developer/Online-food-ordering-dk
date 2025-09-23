@@ -1,5 +1,5 @@
-import React from 'react';
-import Navbar from '../src/components/Navbar.jsx'
+import React, { useEffect } from 'react';
+import Navbar from './components/Navbar.jsx';
 import { ThemeProvider } from '@emotion/react';
 import { darkTheme } from './Theme/DarkTheme.jsx';
 import { CssBaseline } from '@mui/material';
@@ -8,20 +8,27 @@ import RestaurantDetails from './components/Restaurant/RestaurantDetails.jsx';
 import Card from './components/Card/Card.jsx';
 import Profile from './components/Profile/Profile.jsx';
 import CustomRoute from './Routers/CustomRoute.jsx';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUser } from './components/State/Authentication/Action.jsx';
+
+
 function App() {
+  const dispatch = useDispatch()
+  const jwt = localStorage.getItem("jwt")
+  const { auth } = useSelector(store => store)
+
+  useEffect(() => {
+    if (auth.jwt || jwt) {
+      dispatch(getUser(auth.jwt || jwt))
+    }
+  }, [auth.jwt, jwt, dispatch])
+
   return (
     <ThemeProvider theme={darkTheme}>
-        <CssBaseline/>
-          {/* <Navbar/> */}
-          {/* <Home/> */}
-          {/* <RestaurantDetails/> */}
-          {/* <Card/> */}
-          {/* <Profile/> */}
-          <CustomRoute/>
-
+      <CssBaseline />
+      <CustomRoute />
     </ThemeProvider>
-
-  );
+  )
 }
 
-export default App;
+export default App

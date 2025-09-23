@@ -4,8 +4,13 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { IconButton, Avatar, Badge } from "@mui/material";
 import { pink } from "@mui/material/colors";
 import "./Navbar.css";
+import { Person } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+
+  const navigate = useNavigate()
+
   return (
     <div className="px-5 z-50 py-[.8rem] bg-[#fe0077] lg:px-20 flex justify-between items-center">
       {/* Logo */}
@@ -23,7 +28,8 @@ const Navbar = () => {
         </IconButton>
 
         {/* Avatar */}
-        <Avatar sx={{ bgcolor: "white", color: pink.A400 }}>D</Avatar>
+        {false ? <Avatar sx={{ bgcolor: "white", color: pink.A400 }}>D</Avatar>:
+        <IconButton onClick={()=>{navigate("/account/login")}}><Person/></IconButton>}
 
         {/* Cart */}
         <IconButton>
