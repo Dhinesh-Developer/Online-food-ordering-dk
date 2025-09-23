@@ -7,15 +7,17 @@ import Home from './components/Home/Home.jsx';
 import RestaurantDetails from './components/Restaurant/RestaurantDetails.jsx';
 import Card from './components/Card/Card.jsx';
 import Profile from './components/Profile/Profile.jsx';
+import CustomRoute from './Routers/CustomRoute.jsx';
 function App() {
   return (
     <ThemeProvider theme={darkTheme}>
         <CssBaseline/>
-          <Navbar/>
+          {/* <Navbar/> */}
           {/* <Home/> */}
           {/* <RestaurantDetails/> */}
           {/* <Card/> */}
-          <Profile/>
+          {/* <Profile/> */}
+          <CustomRoute/>
 
     </ThemeProvider>
 
